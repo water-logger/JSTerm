@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>&#65279;</title>
+  </head>
+  <body>
+    <div>
+      <form id="console-form">
+        <input type="text" id="command">
+        <input type="submit" value="Execute">
+		  <!<button id="clear" type="button">​</button>
+      </form>
+      <hr>
+		𝘵𝘦𝘳𝘮
+      <pre id="console"></pre>
+    </div>
+  </body>
+  <style>
+  </style>
+  <script>
+    const consoleElm = document.querySelector('#console');
+    const consoleForm = document.querySelector('#console-form');
+	 
+    consoleForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+		
+      const command = event.target.querySelector('#command').value;
+      const value = eval(command);
+		
+		if (command == "console.clear()")
+		{
+         consoleElm.innerHTML = '';
+      } else if (command.includes('console.log("')) {
+		  consoleElm.innerHTML += (command.substr(13, command.length-15) + " - 🗿🍷") + '\n';
+		} else {
+		  consoleElm.innerHTML += (value === undefined ? 'undefined' : value + " - 🗿🍷") + '\n';
+		}
+	 });
+  </script>
+</html>
